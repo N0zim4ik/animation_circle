@@ -75,7 +75,7 @@ class _HomePageState extends State<HomePage> {
                   height: 10,
                 ),
                 FilledButton(
-                  style: ButtonStyle(
+                  style: const ButtonStyle(
                     foregroundColor: MaterialStatePropertyAll(
                       Colors.black,
                     ),
