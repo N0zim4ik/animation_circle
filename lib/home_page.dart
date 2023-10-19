@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import 'my_painter.dart';
+
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
 
@@ -10,38 +12,18 @@ class HomePage extends StatefulWidget {
 class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
-    return const Scaffold(
-      body: DefaultTabController(
-        length: 3,
-        child: SafeArea(
-          child: Column(
+    return Scaffold(
+      body: Center(
+        child: SizedBox.square(
+          dimension: 70,
+          child: Stack(
             children: [
-              SizedBox(
-                height: 200,
-                child: ColoredBox(
-                  color: Colors.blue,
-                  child: Center(
-                    child: Text('Teb bar'),
-                  ),
+              CustomPaint(
+                painter: MyPainter(
                 ),
+
+                size: Size.infinite,
               ),
-              TabBar(
-                indicatorColor: Colors.orange,
-                labelColor: Colors.orange,
-                tabs: [
-                  Tab(text: 'All'),
-                  Tab(text: 'Users'),
-                  Tab(text: 'Groups'),
-                ],
-              ),
-              Expanded(
-                  child: TabBarView(
-                children: [
-                  ColoredBox(color: Colors.black),
-                  ColoredBox(color: Colors.red),
-                  ColoredBox(color: Colors.green),
-                ],
-              ))
             ],
           ),
         ),
